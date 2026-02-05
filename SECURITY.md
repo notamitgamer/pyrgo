@@ -26,4 +26,4 @@ For critical vulnerabilities that require immediate attention (e.g., remote code
 * We aim to send a fix or a detailed plan within 72 hours.
 * Please allow us time to patch the issue before disclosing it publicly.
 
-Thank you for helping keep Pyrgo safe!
+Thank you for helping keep Githrun safe!

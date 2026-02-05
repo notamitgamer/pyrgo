@@ -19,7 +19,7 @@ from .core import (
 from .network import RateLimitError, fetch_url_content, fetch_gist_content, convert_to_raw_url
 from .utils import print_error, print_info, print_warning, print_success, ConfigManager
 
-app = typer.Typer(help="Pyrgo: Run Python code from GitHub instantly.")
+app = typer.Typer(help="Githrun: Run Python code from GitHub instantly.")
 bookmark_app = typer.Typer(help="Manage bookmarks.")
 app.add_typer(bookmark_app, name="bookmark")
 
@@ -150,7 +150,7 @@ def find(
 
     except RateLimitError:
         print_error("Rate Limit Hit.")
-        print_info("Use 'pyrgo login <token>' to fix this.")
+        print_info("Use 'githrun login <token>' to fix this.")
     except Exception as e:
         print_error(str(e))
 

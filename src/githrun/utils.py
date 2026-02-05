@@ -16,7 +16,7 @@ from rich.console import Console
 console = Console()
 
 # Paths
-APP_DIR = Path.home() / ".pyrgo"
+APP_DIR = Path.home() / ".githrun"
 CACHE_DIR = APP_DIR / "cache"
 BIN_DIR = APP_DIR / "bin"
 CONFIG_FILE = APP_DIR / "config.json"
@@ -127,7 +127,7 @@ class VenvManager:
     """Manages temporary virtual environments for auto-installing dependencies."""
     
     def __init__(self):
-        self.temp_dir = tempfile.mkdtemp(prefix="pyrgo_env_")
+        self.temp_dir = tempfile.mkdtemp(prefix="githrun_env_")
         self.venv_dir = Path(self.temp_dir)
         self.python_exe = self._get_python_exe()
         self.pip_exe = self._get_pip_exe()
