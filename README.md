@@ -2,6 +2,8 @@
 
 > The Swiss Army Knife for Remote Python Execution.
 
+## It is available as a VS Code extension. Check out: [marketplace.visualstudio.com](https://marketplace.visualstudio.com/items?itemName=notamitgamer.vscode-githrun)
+
 Githrun is a powerful CLI tool and Python library that lets you run, explore, and install Python code directly from GitHub and Gists. It handles dependencies, private repositories, and even turns remote scripts into local command-line tools.
 
 [![PyPI version](https://img.shields.io/pypi/v/githrun.svg)](https://pypi.org/project/githrun/)
