@@ -142,17 +142,25 @@ function runSelection() {
 
 // 4. Installation Helper
 function checkGithrunInstallation() {
-    // Explicitly type 'err' and 'stdout' to satisfy strict mode
+    // Check version to verify installation
     cp.exec('githrun --version', (err: cp.ExecException | null, stdout: string) => {
-        if (err) {
+        // Regex looks for standard version patterns like 1.0.0, 0.2, v1.0 etc.
+        // It allows for "githrun version 1.0.0" or just "1.0.0"
+        const versionMatch = stdout && stdout.match(/(\d+\.\d+(\.\d+)?)/);
+
+        if (err || !versionMatch) {
+            console.log('Githrun CLI check failed:', err ? err.message : 'No version number in stdout');
+            
             vscode.window.showWarningMessage(
                 "Githrun CLI is not detected. Install it to run remote scripts?",
                 "Install Now"
-            ).then((selection: string | undefined) => { // Explicitly type 'selection'
+            ).then((selection: string | undefined) => {
                 if (selection === "Install Now") {
                     installGithrun();
                 }
             });
+        } else {
+            console.log(`Githrun CLI detected: ${versionMatch[0]}`);
         }
     });
 }

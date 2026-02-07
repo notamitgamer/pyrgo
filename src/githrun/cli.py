@@ -5,6 +5,9 @@ from rich.table import Table
 from rich.prompt import Prompt
 from typing import Optional
 
+# Import the version from __init__.py
+from . import __version__
+
 from .core import (
     execute_remote_code, 
     search_repository, 
@@ -24,6 +27,29 @@ bookmark_app = typer.Typer(help="Manage bookmarks.")
 app.add_typer(bookmark_app, name="bookmark")
 
 console = Console()
+
+# --- VERSION HANDLING ---
+
+def version_callback(value: bool):
+    if value:
+        console.print(f"Githrun version: [bold cyan]{__version__}[/bold cyan]")
+        raise typer.Exit()
+
+@app.callback()
+def main(
+    version: bool = typer.Option(
+        None, 
+        "--version", 
+        "-v", 
+        help="Show the application's version and exit.", 
+        callback=version_callback, 
+        is_eager=True
+    )
+):
+    """
+    Githrun: Run Python code from GitHub instantly.
+    """
+    pass
 
 # --- MAIN COMMANDS ---
 

@@ -2,7 +2,7 @@
   "name": "vscode-githrun",
   "displayName": "Githrun",
   "description": "Instantly run Python scripts from GitHub URLs directly in VS Code.",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "publisher": "notamitgamer",
   "icon": "icon.png",
   "engines": {

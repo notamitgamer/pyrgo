@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "githrun"
-version = "0.1.0"
+version = "0.1.1"
 description = "A CLI tool to run Python scripts directly from GitHub URLs"
 authors = ["Amit Dutta <mail@amit.is-a.dev>"]
 readme = "README.md"
